@@ -1,25 +1,24 @@
 // Lista a cui aggiungere input utente
 var cognLista = ["brambilla", "fumagalli", "bianchi", "rossi", "duzioni", "balsano", "verdi"];
 
-// Cognome Utente
-var cognome = prompt("Inserisci cognome");
-if(isNaN(cognome)){
-  cognome = cognome.toLowerCase();
-  cognLista.push(cognome);
+// Richiesta Cognome Utente fin che l'input non sarà isNan
+do{
+  var cognome = prompt("Inserisci cognome");
 }
-else{
-  alert("Hai inserito un numero!")
-}
-// /Cognome Utente
+while (isNaN(cognome) === false);
+// Richiesta Cognome Utente fin che l'input non sarà isNan
 
-// Lista in ordine alfabetico
+// Aggiunta input in Lista e modifica stringa in minuscolo
+cognLista.push(cognome = cognome.toLowerCase());
+
+// Nuova variabile lista in ordine alfabetico tra stringhe in minuscolo
 var listaOrdinata = cognLista.sort();
-// /Lista in ordine alfabetico
+// /Nuova variabile lista in ordine alfabetico tra stringhe in minuscolo
 
 // Stampa Posizione Utente
 for(var i = 0; i < cognLista.length; i++){
   if(cognome === listaOrdinata[i]){
-    listaOrdinata[i] = cognome + " N': " + (i + 1);
+    listaOrdinata[i] = listaOrdinata[i] + " N': " + (i + 1);
   }
   console.log(listaOrdinata[i]);
 }
